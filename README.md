@@ -33,5 +33,4 @@ To get started with this project, you will need to:
 
 - Add a dashboard to visualize the data
 - Schedule the pipeline to run automatically using a tool like Airflow or Cron
-- Add support for other data sources, such as Apple Music or YouTube Music
-- Use a cloud-based database service like Amazon RDS or Google Cloud SQL for easier scalability and management.
+- Use a cloud-based database service for easier management.
