@@ -1,7 +1,6 @@
+-- Fetch all the data
 SELECT song_name, artist_name, played_at, played_date
 	FROM public.spotify_tracks_master;
-
---Sure, here are some SQL queries that can help analyze the data:
 
 --Count the number of unique songs and artists in the table:
 
@@ -44,11 +43,3 @@ FROM (
   FROM public.spotify_tracks_master
 ) subquery;
 
-SELECT 
-  song_name, 
-  artist_name, 
-  played_at, 
-  played_date, 
-  (TO_TIMESTAMP(played_at, 'YYYY-MM-DD HH24:MI:SS') - 
-   LAG(TO_TIMESTAMP(played_at, 'YYYY-MM-DD HH24:MI:SS')) OVER (ORDER BY TO_TIMESTAMP(played_at, 'YYYY-MM-DD HH24:MI:SS'))) AS time_diff
-FROM public.spotify_tracks_master;
