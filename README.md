@@ -27,7 +27,7 @@ To get started with this project, you will need to:
 - Install the dependencies
 - Set up a PostgreSQL database and update the database credentials in the **config.ini** file
 - Update the **USER_ID** and **TOKEN** in the **config.ini** file with your Spotify API user ID and token
-- Run the main.py script
+- Run the **main.py** script
 
 ## Future Work
 
