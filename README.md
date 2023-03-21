@@ -1,6 +1,6 @@
 # Spotify Data Pipeline
 
-This project is a data pipeline that extracts information about the songs played on Spotify by a user, transforms the data, and loads it into a PostgreSQL database. The pipeline runs daily and stores the data in tables with a naming convention of "spotify_tracks_yyyymmdd", where "yyyymmdd" represents the date the data was extracted.
+This project is a data pipeline that extracts information about the songs played on Spotify by a user, transforms the data, and loads it into a PostgreSQL database. The pipeline runs daily and stores the data locally in a table named **spotify_tracks_master**
 
 ## Architecture
 The Spotify Data Pipeline consists of four main components:
