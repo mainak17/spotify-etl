@@ -33,5 +33,5 @@ To get started with this project, you will need to:
 ## Future Work
 
 - [Done] Add a dashboard to visualize the data
-- Schedule the pipeline to run automatically using a tool like Airflow or Cron
+- [Done]Schedule the pipeline to run automatically using a tool like Airflow
 - Use a cloud-based database service for easier management.
