@@ -18,7 +18,6 @@ The tech stack for this project includes:
 - **Programming language**: Python
 - **Libraries**: Pandas, Requests, psycopg2
 - **Database**: PostgreSQL
-- **ORM**: SQLAlchemy
 
 ## Getting Started
 To get started with this project, you will need to:
