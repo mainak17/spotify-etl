@@ -20,13 +20,13 @@ def check_if_valid_data(df: pd.DataFrame) -> bool:
         raise Exception("Null Value Check Failed. Null Value Found.")
     
     # Check that all timestamps are of yesterday's date
-    yesterday = datetime.now() - timedelta(days=1)
-    yesterday = str(yesterday)[0:10]
-    played_dates = df["played_date"].tolist()
-    for played_date in played_dates:
-        played_date = str(played_date)[0:10]
-        if played_date != yesterday:
-            raise Exception("At least one of the returned songs does not have yesterday's timestamp")
+    # yesterday = datetime.now() - timedelta(days=1)
+    # yesterday = str(yesterday)[0:10]
+    # played_dates = df["played_date"].tolist()
+    # for played_date in played_dates:
+    #     played_date = str(played_date)[0:10]
+    #     if played_date != yesterday:
+    #         raise Exception("At least one of the returned songs does not have yesterday's timestamp")
 
     return True
 
@@ -103,8 +103,8 @@ if __name__=="__main__":
     yesterday_end_unix_timestamp = int(yesterday_end.timestamp()) * 1000
 
     #print(yesterday_start,yesterday_start_unix_timestamp)
-    #url = endpoint + f"&after={yesterday_start_unix_timestamp}"
-    url = endpoint + f"&before={yesterday_end_unix_timestamp}"
+    # url = endpoint + f"&after={yesterday_start_unix_timestamp}"
+    url = endpoint + f"?before={yesterday_end_unix_timestamp}"
     response = requests.get(url,headers=headers)
 
     data = response.json()
@@ -117,11 +117,11 @@ if __name__=="__main__":
 
     for song in data["items"]:
         if song["played_at"][0:10] ==  str(yesterday_start)[0:10]:
-        # if yesterday_start <= played_at_temp <= yesterday_end:
             song_names.append(song["track"]["name"])
             artist_names.append(song["track"]["artists"][0]["name"])
-            played_at_temp = datetime.strptime(song["played_at"], '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=pytz.utc).astimezone(tz)
-            played_at.append(played_at_temp.strftime('%Y-%m-%d %H:%M:%S'))
+            # print(song["played_at"])
+            played_at_temp = pd.to_datetime(song["played_at"], format='%Y-%m-%d %H:%M:%S')
+            played_at.append(datetime.strftime(played_at_temp,'%Y-%m-%d %H:%M:%S'))
             timestamps.append(song["played_at"][0:10])
 
     song_dict = {
@@ -133,7 +133,7 @@ if __name__=="__main__":
 
     song_df = pd.DataFrame(song_dict,columns=["song_name","artist_name","played_at","played_date"])
 
-    #print(song_df)
+    print(song_df)
     if check_if_valid_data(song_df):
         print("Data Valid, proceed to Load Stage.")
 
