@@ -28,9 +28,11 @@ To get started with this project, you will need to:
 - Set up a PostgreSQL database and update the database credentials in the **config.ini** file
 - Update the **USER_ID** and **TOKEN** in the **config.ini** file with your Spotify API user ID and token
 - Run the **main.py** script
+## Observation over 7 Days
+![image](https://user-images.githubusercontent.com/26038097/226666696-bb7e1b8f-a104-400d-8683-62c956fca975.png)
 
 ## Future Work
 
-- Add a dashboard to visualize the data
+- [Done] Add a dashboard to visualize the data
 - Schedule the pipeline to run automatically using a tool like Airflow or Cron
 - Use a cloud-based database service for easier management.
