@@ -29,7 +29,7 @@ To get started with this project, you will need to:
 - Run the **main.py** script
 ## Observation over 7 Days
 ![image](https://user-images.githubusercontent.com/26038097/226666696-bb7e1b8f-a104-400d-8683-62c956fca975.png)
-
+**PS** : Please dont judge my music taste🤣
 ## Future Work
 
 - [Done] Add a dashboard to visualize the data
